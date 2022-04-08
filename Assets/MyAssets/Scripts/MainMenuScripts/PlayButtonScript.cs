@@ -2,6 +2,20 @@ using UnityEngine;
 
 public class PlayButtonScript : MonoBehaviour
 {
+    [SerializeField]
+    private float _fadeInDuration;
+
+    [SerializeField]
+    private float _fadeOutDuration;
+
+
+    [SerializeField]
+    private string _catSceneName;
+
+    [SerializeField]
+    private string _levelMapSceneName;
+
+
     public void OnPlayTouch()
     {
         // If this is the first time the player is running the game, "NotFirstPlay" equals 0
@@ -9,11 +23,12 @@ public class PlayButtonScript : MonoBehaviour
         // DON'T FORGET TO CHANGE THIS VALUE IN THE CATSCENE!!!
         if (PlayerPrefs.GetInt("NotFirstPlay", 0) != 1)
         {
-            StartCoroutine(AsyncSceneLoading.AsyncLoader(this, 1));
+            StartCoroutine(AsyncSceneLoading.AsyncSceneLoad(this, _catSceneName, fadeInDuration: _fadeInDuration, fadeOutDuration: _fadeOutDuration));
         }
         else
         {
-            StartCoroutine(AsyncSceneLoading.AsyncLoader(this, 3));
+            StartCoroutine(AsyncSceneLoading.AsyncSceneLoad(this, _catSceneName, fadeInDuration: _fadeInDuration, fadeOutDuration: _fadeInDuration));
         }
+
     }
 }

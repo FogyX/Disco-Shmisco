@@ -1,46 +1,69 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ExitButtonTouch : MonoBehaviour
 {
-    private GameObject darkPanel;
+    private bool _isExiting;
 
-    private bool isExiting = false;
+    private float _fadeSpeed;
+
+    [SerializeField]
+    private float fadeDuration;
+
+    [SerializeField]
+    private float _soundFadeRatio;
 
     private void Awake()
     {
-        darkPanel = Resources.Load<GameObject>("DarkPanel");
+        _fadeSpeed = 1f / fadeDuration;
     }
 
     public void OnExitTouch()
     {
-        if (isExiting)
+        if (_isExiting)
+        {
             return;
+        }
 
-        isExiting = true;
-        StartCoroutine(FadeOutForExit());
+        _isExiting = true;
+
+        StartCoroutine(FadeInForExit(_fadeSpeed));
     }
 
-    private IEnumerator FadeOutForExit()
+    private IEnumerator FadeInForExit(float fadeOutSpeed)
     {
-        GameObject darkPanelCanvas = Instantiate(darkPanel, Vector3.zero, Quaternion.identity);
-
-        Image darkPanelImage = darkPanelCanvas.GetComponentInChildren<Image>();
-
-        Color temporaryColor = darkPanelImage.color;
-
-        // Change the opacity of the panel
-        for (float a = 0; a < 1; a += 0.01f)
+        if (FaderScript.instance.animator != null && FaderScript.instance.animator.isActiveAndEnabled)
         {
-            temporaryColor.a = a;
-            darkPanelImage.color = temporaryColor;
+            FaderScript.instance.animator.speed = fadeOutSpeed;
+        }
 
-            AudioListener.volume -= 0.01f;
+        bool waitForFadeEnding = true;
 
+        FaderScript.instance.FadeIn(() => waitForFadeEnding = false);
+
+        StartCoroutine(FadeSoundsIn(fadeOutSpeed));
+
+        while (waitForFadeEnding)
+        {
             yield return null;
         }
 
+        Debug.Log("Succesfully exited!");
         Application.Quit();
+    }
+
+    private IEnumerator FadeSoundsIn(float fadeSpeed)
+    {
+        float fadeSoundsSpeed = fadeSpeed / _soundFadeRatio;
+
+        float volume = AudioListener.volume;
+
+        for ( ; volume > 0; )
+        {
+            volume -= fadeSoundsSpeed;
+            AudioListener.volume = volume;
+            
+            yield return null;
+        }
     }
 }
