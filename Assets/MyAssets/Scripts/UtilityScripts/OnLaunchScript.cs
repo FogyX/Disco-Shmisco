@@ -16,6 +16,7 @@ public class OnLaunchScript : MonoBehaviour
     {
         _fadeSpeed = 1f / fadeDuration;
         AudioListener.volume = 0.0f;
+	
     }
 
     private void Start()
@@ -61,7 +62,7 @@ public class OnLaunchScript : MonoBehaviour
 
         float volume = AudioListener.volume;
 
-        float gameVolume = PlayerPrefs.GetFloat("gameVolume");
+        float gameVolume = PlayerPrefs.GetFloat("gameVolume", 1f);
 
         for ( ; volume < gameVolume; )
         {

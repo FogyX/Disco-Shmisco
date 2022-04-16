@@ -23,11 +23,11 @@ public class PlayButtonScript : MonoBehaviour
         // DON'T FORGET TO CHANGE THIS VALUE IN THE CATSCENE!!!
         if (PlayerPrefs.GetInt("NotFirstPlay", 0) != 1)
         {
-            StartCoroutine(AsyncSceneLoading.AsyncSceneLoad(this, _catSceneName, fadeInDuration: _fadeInDuration, fadeOutDuration: _fadeOutDuration));
+            StartCoroutine(AsyncSceneLoader.instance.AsyncSceneLoad(_catSceneName, fadeInDuration: _fadeInDuration, fadeOutDuration: _fadeOutDuration));
         }
         else
         {
-            StartCoroutine(AsyncSceneLoading.AsyncSceneLoad(this, _catSceneName, fadeInDuration: _fadeInDuration, fadeOutDuration: _fadeInDuration));
+            StartCoroutine(AsyncSceneLoader.instance.AsyncSceneLoad(_catSceneName, fadeInDuration: _fadeInDuration, fadeOutDuration: _fadeInDuration));
         }
 
     }
