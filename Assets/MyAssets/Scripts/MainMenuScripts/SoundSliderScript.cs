@@ -1,19 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SoundSliderScript : MonoBehaviour
 {
-    [SerializeField]
-    private Slider slider;
+    [SerializeField] private Slider slider;
 
-    private void Start()
+    [SerializeField] private AudioMixer sliderAudioMixer;
+
+
+    /// <summary>
+    /// Either MusicVolume or SoundVolume
+    /// </summary>
+    [SerializeField]
+    private string volumeParameterName;
+
+    private void Awake()
     {
-        slider.value = PlayerPrefs.GetFloat("gameVolume");
+        if (volumeParameterName != "MusicVolume" && volumeParameterName != "SoundVolume")
+        {
+            throw new System.Exception("Volume Parameter Name is either MusicVolume or SoundVolume");
+        }
+        slider.value = PlayerPrefs.GetFloat(volumeParameterName, 1f);
     }
 
-    public void ChangeSound()
+
+    public void ChangeVolume()
     {
-        AudioListener.volume = slider.value;
-        PlayerPrefs.SetFloat("gameVolume", slider.value);
+        PlayerPrefs.SetFloat(volumeParameterName, slider.value);
+        sliderAudioMixer.SetFloat(volumeParameterName, Mathf.Log10(slider.value) * 20); 
     }
 }

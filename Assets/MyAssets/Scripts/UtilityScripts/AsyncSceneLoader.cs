@@ -8,18 +8,10 @@ using UnityEngine.Audio;
 /// </summary>
 public class AsyncSceneLoader : MonoBehaviour
 {
-    private static float _fadeInDuration;
-    private static float _fadeOutDuration;
-    private static bool _isLoading;
+    private bool _isLoading;
 
-    [SerializeField]
-    private static AudioMixerGroup masterAudio;
-
-    [SerializeField]
-    private static AudioMixerSnapshot volumeOffSnapshot;
-
-    [SerializeField]
-    private static AudioMixerSnapshot volumeOnSnapshot;
+    [SerializeField] private AudioMixerSnapshot volumeOffSnapshot;
+    [SerializeField] private AudioMixerSnapshot volumeOnSnapshot;
 
     private const string ASYNC_LOADER_PATH = @"AsyncSceneLoaderFolder/AsyncSceneLoader";
 
@@ -40,28 +32,24 @@ public class AsyncSceneLoader : MonoBehaviour
     }
 
     /// <summary>
-    /// Loads the scene asynchronously. It is highly recommended to read the docs.
+    /// Loads the scene asynchronously (by name). 
     /// </summary>
     /// <param name="sceneName">The name of the scene to load.</param>
-    /// <param name="doFadeIn">Do fade-in effect.</param>
-    /// <param name="doFadeOut">Do fade-out effect.</param>
     /// <param name="fadeSoundsIn">Do fade-in effect for sounds.</param>
     /// <param name="fadeSoundsOut">Do fade-out effect for sounds.</param>
     /// <param name="fadeInDuration">The duration of the fade-in effect.</param>
     /// <param name="fadeOutDuration">The duration of the fade-out effect.</param>
     /// <returns></returns>
-    public IEnumerator AsyncSceneLoad(string sceneName, bool doFadeIn = true, bool doFadeOut = true, bool fadeSoundsIn = true, bool fadeSoundsOut = true, float fadeInDuration = 1f, float fadeOutDuration = 1f)
+    public IEnumerator AsyncSceneLoad(string sceneName, bool fadeSoundsIn = true, bool fadeSoundsOut = true, float fadeInDuration = 1f, float fadeOutDuration = 1f)
     {
-        // Don't do anything, if some scene is loading already.
         if (_isLoading)
         {
+            print("Is loading already");
             yield break;
         }
 
-        if (doFadeIn)
-        {
-            yield return StartCoroutine(StartFading(_fadeInDuration, fadeSoundsIn));
-        }
+        FadeSoundsIn(fadeInDuration, fadeSoundsIn);
+        yield return StartCoroutine(StartFading(fadeInDuration));
 
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
 	
@@ -74,17 +62,18 @@ public class AsyncSceneLoader : MonoBehaviour
 
 	    asyncOperation.allowSceneActivation = true;
 
-        if (doFadeOut)
+        asyncOperation.completed += (asyncOperation) =>
         {
-            yield return StartCoroutine(EndFading(_fadeOutDuration, fadeSoundsOut));
-        }
+            FadeSoundsOut(fadeOutDuration, fadeSoundsOut);
+            StartCoroutine(EndFading(fadeOutDuration));
+        };
     }
 
-    private IEnumerator StartFading(float fadeInDuration, bool doFadeSounds)
+    private IEnumerator StartFading(float fadeInDuration)
     {
         if (FaderScript.instance.animator != null && FaderScript.instance.animator.isActiveAndEnabled)
         {
-            FaderScript.instance.animator.speed = fadeInDuration;
+            FaderScript.instance.animator.speed = 1 / fadeInDuration;
         }
 
         _isLoading = true;
@@ -92,11 +81,6 @@ public class AsyncSceneLoader : MonoBehaviour
         bool waitForFadeEnding = true;
 
         FaderScript.instance.FadeIn(SetDefaults);
-
-        if (doFadeSounds)
-        {
-            StartCoroutine(FadeSoundsIn(fadeInDuration));
-        }
 
         while (waitForFadeEnding)
         {
@@ -110,23 +94,16 @@ public class AsyncSceneLoader : MonoBehaviour
         }
     }
 
-    private IEnumerator EndFading(float fadeOutDuration, bool doFadeSounds)
+    private IEnumerator EndFading(float fadeOutDuration)
     {
-	Debug.Log("Start endfade coro");
-
         if (FaderScript.instance.animator != null && FaderScript.instance.animator.isActiveAndEnabled)
         {
-            FaderScript.instance.animator.speed = fadeOutDuration;
+            FaderScript.instance.animator.speed = 1 / fadeOutDuration;
         }
 
         bool waitForFadeEnding = true;
 
         FaderScript.instance.FadeOut(SetDefaults);
-
-        if (doFadeSounds)
-        {
-            StartCoroutine(FadeSoundsOut(fadeOutDuration));
-        }
 
         while (waitForFadeEnding)
         {
@@ -143,15 +120,29 @@ public class AsyncSceneLoader : MonoBehaviour
 
     }
 
-    private IEnumerator FadeSoundsIn(float fadeDuration)
+    private void FadeSoundsIn(float fadeDuration, bool doFadeSounds)
     {
-        volumeOffSnapshot.TransitionTo(fadeDuration);
-        yield return null;
+        if (doFadeSounds)
+        {
+            volumeOffSnapshot.TransitionTo(fadeDuration / 2);
+        }
+        else
+        {
+            // Turns sounds off immediatly
+            volumeOffSnapshot.TransitionTo(0);
+        }
     }
 
-    private IEnumerator FadeSoundsOut(float fadeDuration)
+    private void FadeSoundsOut(float fadeDuration, bool doFadeSounds)
     {
-        volumeOnSnapshot.TransitionTo(fadeDuration);
-        yield return null;
+        if (doFadeSounds)
+        {
+            volumeOnSnapshot.TransitionTo(fadeDuration / 2);
+        }
+        else
+        {
+            // Turns sounds on immediatly
+            volumeOnSnapshot.TransitionTo(0);
+        }
     }
 }

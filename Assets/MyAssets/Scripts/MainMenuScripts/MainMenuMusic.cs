@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class MainMenuMusic : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject audioHolder;
+    [SerializeField] private GameObject audioHolder;
 
-    [SerializeField]
-    private AudioClip audioClip;
+    [SerializeField] private AudioClip audioClip;
 
     private AudioSource audioSource;
 
@@ -22,10 +20,5 @@ public class MainMenuMusic : MonoBehaviour
             audioSource.clip = audioClip;
             audioSource.Play();
         }
-    }
-
-    private void Update()
-    {
-    
     }
 }

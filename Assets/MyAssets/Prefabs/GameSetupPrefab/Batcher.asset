@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167a8d05ccbd53a43bb41c35ff9a8800, type: 3}
+  m_Name: Batcher
+  m_EditorClassIdentifier: 
+  m_prefab: {fileID: 1824965950031187945, guid: 7bd947ce6257d9a44be1627effe100b3, type: 3}
+  m_scenes:
+  - {fileID: 102900000, guid: f349c335c1d47e04cb1e68677c2fcde2, type: 3}

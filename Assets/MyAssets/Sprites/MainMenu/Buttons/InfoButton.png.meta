@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: de8b66c43806e3a4ca2aeef8d65b2332
+guid: 74d535e12eac29145894c7af855bce05
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6943826488639221091
-    second: Language_RUS_enabled
-  - first:
-      213: -1840025041548395014
-    second: Language_ENG_disabled
+      213: -4834039034794360177
+    second: InfoButton_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,43 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Language_RUS_enabled
+      name: InfoButton_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 198
-        width: 217
-        height: 126
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9216ba399292af90800000000000000
-      internalID: -6943826488639221091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Language_ENG_disabled
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 198
-        width: 217
-        height: 126
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afd3fac39fae676e0800000000000000
-      internalID: -1840025041548395014
+      spriteID: f82c5b41c1b0aecb0800000000000000
+      internalID: -4834039034794360177
       vertices: []
       indices: 
       edges: []

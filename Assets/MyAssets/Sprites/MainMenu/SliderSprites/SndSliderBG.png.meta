@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51579481687bbe5408f94c16b9fe5a3e
+guid: 0e5f5344ca4eda949b5bbf026a029b18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7772067898255672256
-    second: IMG_20220411_225008_167_0
+      213: 1479872153947923160
+    second: SndSliderBG_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -106,22 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_20220411_225008_167_0
+      name: SndSliderBG_0
       rect:
         serializedVersion: 2
-        x: 230
-        y: 22
-        width: 52
-        height: 468
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 30, z: 30, w: 30}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04cf04abc61142490800000000000000
-      internalID: -7772067898255672256
+      spriteID: 8d2ee0122ef898410800000000000000
+      internalID: 1479872153947923160
       vertices: []
       indices: 
       edges: []

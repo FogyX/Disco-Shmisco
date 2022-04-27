@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 49979e502a9f680478af6c872338cb3d
+guid: c6a748a87aeb03f4fb027f7a9eea8eeb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4182622164897722983
-    second: Language_RUS_disabled
-  - first:
-      213: 1798632225490429175
-    second: Language_ENG_enabled
+      213: -7894891596912025342
+    second: MusSliderBG_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -109,43 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Language_RUS_disabled
+      name: MusSliderBG_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 198
-        width: 217
-        height: 126
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 30, y: 30, z: 30, w: 30}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99d889f2d4754f5c0800000000000000
-      internalID: -4182622164897722983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Language_ENG_enabled
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 198
-        width: 217
-        height: 126
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f46de1ca7606f810800000000000000
-      internalID: 1798632225490429175
+      spriteID: 201a7d9ebe5bf6290800000000000000
+      internalID: -7894891596912025342
       vertices: []
       indices: 
       edges: []

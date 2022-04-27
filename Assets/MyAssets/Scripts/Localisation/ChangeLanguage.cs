@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ChangeLanguage : MonoBehaviour
 {
@@ -8,33 +9,11 @@ public class ChangeLanguage : MonoBehaviour
 
     [SerializeField] private Image selectorImage;
 
+    public static UnityEvent OnLanguageSetRus = new UnityEvent();
+    public static UnityEvent OnLanguageSetEng = new UnityEvent();
 
     private void Awake()
     {
-        /* 
-         * If this is the first time player runs game, then Language will have
-         * its default value. In such a case, the system language is checked.
-         * If it is russian / ukrainian / belarusian, then set Language 
-         * to russian. In other case, set it to ENG.
-        */
-
-        if (PlayerPrefs.GetString("Language", "notSelected") == "notSelected")  {
-            var systemLanguage = Application.systemLanguage;
-
-            switch (systemLanguage)
-            {
-                case SystemLanguage.Russian:
-                case SystemLanguage.Ukrainian:
-                case SystemLanguage.Belarusian:
-                    PlayerPrefs.SetString("Language", "RUS");
-                    break;
-
-                default:
-                    PlayerPrefs.SetString("Language", "ENG");
-                    break;
-            }
-        }
-
         // Set the button sprite.
         if (PlayerPrefs.GetString("Language") == "RUS")
         {
@@ -44,7 +23,6 @@ public class ChangeLanguage : MonoBehaviour
         {
             selectorImage.sprite = languageEng;
         }
-
     }
 
     public void ChangeLanguageTouch()
@@ -54,6 +32,7 @@ public class ChangeLanguage : MonoBehaviour
         {
             // ...set it to RUS.
             PlayerPrefs.SetString("Language", "RUS");
+            OnLanguageSetRus.Invoke();
             selectorImage.sprite = languageRus;
         }
 
@@ -62,6 +41,7 @@ public class ChangeLanguage : MonoBehaviour
         {
             // ...set it to ENG.
             PlayerPrefs.SetString("Language", "ENG");
+            OnLanguageSetEng.Invoke();
             selectorImage.sprite = languageEng;
         }
 

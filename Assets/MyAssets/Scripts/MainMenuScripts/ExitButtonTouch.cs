@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ExitButtonTouch : MonoBehaviour
 {
@@ -7,11 +8,9 @@ public class ExitButtonTouch : MonoBehaviour
 
     private float _fadeSpeed;
 
-    [SerializeField]
-    private float fadeDuration;
+    [SerializeField] private float fadeDuration;
 
-    [SerializeField]
-    private float _soundFadeRatio;
+    [SerializeField] private AudioMixerSnapshot volumeOff;
 
     private void Awake()
     {
@@ -41,7 +40,7 @@ public class ExitButtonTouch : MonoBehaviour
 
         FaderScript.instance.FadeIn(() => waitForFadeEnding = false);
 
-        StartCoroutine(FadeSoundsIn(fadeOutSpeed));
+        StartCoroutine(FadeSoundsIn(fadeDuration));
 
         while (waitForFadeEnding)
         {
@@ -52,18 +51,9 @@ public class ExitButtonTouch : MonoBehaviour
         Application.Quit();
     }
 
-    private IEnumerator FadeSoundsIn(float fadeSpeed)
+    private IEnumerator FadeSoundsIn(float fadeDuration)
     {
-        float fadeSoundsSpeed = fadeSpeed / _soundFadeRatio;
-
-        float volume = AudioListener.volume;
-
-        for ( ; volume > 0; )
-        {
-            volume -= fadeSoundsSpeed;
-            AudioListener.volume = volume;
-            
-            yield return null;
-        }
+        volumeOff.TransitionTo(fadeDuration);
+        yield return null;
     }
 }
