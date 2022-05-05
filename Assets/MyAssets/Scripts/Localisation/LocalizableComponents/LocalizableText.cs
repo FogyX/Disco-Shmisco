@@ -46,6 +46,18 @@ public class LocalizableText : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Use this method to change the text variants easier way.
+    /// </summary>
+    /// <param name="russianVariant"></param>
+    /// <param name="englishVariant"></param>
+    public void ChangeTextVariants(string russianVariant, string englishVariant)
+    {
+        this.russianVariant = russianVariant;
+        this.englishVariant = englishVariant;
+        UpdateText();
+    }
+
     private void ChangeTextToRus()
     {
         _textToLocalize.text = russianVariant;
