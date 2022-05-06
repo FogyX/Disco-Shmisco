@@ -28,7 +28,6 @@ public class DialogComponent : MonoBehaviour
 
     private TextMeshProUGUI _dialogText;
     private LocalizableText _dialogText_loc;
-    private VertexJitter _dialogTextJitter;
 
     private TextMeshProUGUI _characterName;
     private LocalizableText _characterName_loc;
@@ -51,6 +50,8 @@ public class DialogComponent : MonoBehaviour
             var prefab = Resources.Load<GameObject>(PANEL_PATH);
             _dialogPanelInstance = Instantiate(prefab);
         }
+        _dialogPanelInstance.GetComponent<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
         _panelCanvasGroup = _dialogPanelInstance.GetComponent<CanvasGroup>();
 
         // To make sure the opacity will be 0 at the start
@@ -83,9 +84,6 @@ public class DialogComponent : MonoBehaviour
             ContainedDialogText;
 
         _dialogText_loc = _dialogText.gameObject.GetComponent<LocalizableText>();
-
-        _dialogTextJitter = _dialogText.gameObject.GetComponent<VertexJitter>();
-        _dialogTextJitter.enabled = false;
     }
 
     private void InitCharacterName()
@@ -192,10 +190,6 @@ public class DialogComponent : MonoBehaviour
     }
     private IEnumerator ShowSentence_CharByChar(DialogSentence sentence)
     {
-        if (sentence.isShaking)
-        {
-            _dialogTextJitter.enabled = true;
-        }
 
         _characterName_loc.ChangeTextVariants(sentence.characterName_rus, sentence.characterName_eng);
 
@@ -222,11 +216,6 @@ public class DialogComponent : MonoBehaviour
             yield return waitInst;
         }
 
-        if (sentence.isShaking)
-        {
-            _dialogTextJitter.enabled = false;
-        }
-
         _buttonNext.enabled = true;
         sentence.callbackEventOnEnd.Invoke();
         _dialogText.maxVisibleCharacters = 99999;
@@ -234,11 +223,6 @@ public class DialogComponent : MonoBehaviour
 
     private IEnumerator ShowSentence_WordByWord(DialogSentence sentence)
     {
-        if (sentence.isShaking)
-        {
-            _dialogTextJitter.enabled = true;
-        }
-
         _characterName_loc.ChangeTextVariants(sentence.characterName_rus, sentence.characterName_eng);
 
         _dialogText.maxVisibleWords = 0;
@@ -262,11 +246,6 @@ public class DialogComponent : MonoBehaviour
                 }
             }
             yield return waitInst;
-        }
-
-        if (sentence.isShaking)
-        {
-            _dialogTextJitter.enabled = false;
         }
 
         _buttonNext.enabled = true;

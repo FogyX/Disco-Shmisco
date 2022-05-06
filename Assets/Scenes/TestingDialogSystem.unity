@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1028,6 +1028,231 @@ PrefabInstance:
     - target: {fileID: 5465139145277836376, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: fadePanelInDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: fadePanelOutDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[0].talkSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].talkSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].isShaking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].talkSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].talkSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].talkSpeed
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].speechType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[0].voiceFrequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].characterVoice
+      value: 
+      objectReference: {fileID: 8300000, guid: 463950df1bbef5d4581c10f64ca2484c, type: 3}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].voiceFrequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].characterVoice
+      value: 
+      objectReference: {fileID: 8300000, guid: c8a608d666e42824fa10a9d1bf2f2d34, type: 3}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].voiceFrequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].characterVoice
+      value: 
+      objectReference: {fileID: 8300000, guid: d693b8919d2892042a75fe8216cf1060, type: 3}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].voiceFrequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].characterVoice
+      value: 
+      objectReference: {fileID: 8300000, guid: c968fef3920729c4495b986d22ec9a2d, type: 3}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].voiceFrequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[0].sentenceText_eng
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[0].sentenceText_rus
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].sentenceText_eng
+      value: Whaddaya need?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].sentenceText_rus
+      value: "\u0427\u0435\u0433\u043E \u0432\u0430\u043C?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].sentenceText_eng
+      value: We urgently need some cool sluts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].sentenceText_rus
+      value: "\u041D\u0430\u043C \u0432 \u0441\u0440\u043E\u0447\u043D\u043E\u043C
+        \u043F\u043E\u0440\u044F\u0434\u043A\u0435 \u043D\u0443\u0436\u043D\u044B
+        \u043A\u043B\u0430\u0441\u0441\u043D\u044B\u0435 \u0441\u0443\u0447\u043A\u0438."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].sentenceText_eng
+      value: SOMEBODY SAID COOL SLUTS?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].sentenceText_rus
+      value: "\u041A\u0422\u041E \u0422\u041E \u0421\u041A\u0410\u0417\u0410\u041B
+        \u041A\u041B\u0410\u0421\u0421\u041D\u042B\u0415 \u0421\u0423\u0427\u041A\u0418?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].sentenceText_eng
+      value: Somebody said "cool sluts"? ~
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].sentenceText_rus
+      value: "\u041A\u0442\u043E-\u0442\u043E \u0441\u043A\u0430\u0437\u0430\u043B
+        \"\u043A\u043B\u0430\u0441\u0441\u043D\u044B\u0435 \u0441\u0443\u0447\u043A\u0438\"?
+        ~"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[0].characterName_eng
+      value: <color=#d9aa34>Jimmie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[0].characterName_rus
+      value: "<color=#d9aa34>\u0414\u0436\u0438\u043C\u043C\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].characterName_eng
+      value: <color=#6e3490>Bouncer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].characterName_rus
+      value: "<color=#6e3490>\u0412\u044B\u0448\u0438\u0431\u0430\u043B\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].characterName_eng
+      value: Sceletonnie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[2].characterName_rus
+      value: "\u0421\u043A\u0435\u043B\u0435\u0442\u0438\u043A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].characterName_eng
+      value: <color="green">Orc
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[3].characterName_rus
+      value: "<color=\"green\">\u041E\u0440\u043A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].characterName_eng
+      value: <color=#b73bff>Witch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[4].characterName_rus
+      value: "<color=#b73bff>\u0412\u0435\u0434\u044C\u043C\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2110155272}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2110155272}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: onEndDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465139145277836377, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
+      propertyPath: dialogSentences.Array.data[1].callbackEventOnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2903e0e2a3ff2e047a846a2913ca8944, type: 3}
